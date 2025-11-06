@@ -218,7 +218,7 @@ app.post("/newOrder",async(req,res)=>{
 
 app.post("/sellOrder", async (req, res) => {
   const { name } = req.body;
-  await OrdersModel.deleteOne({ name, mode: "SELL" });
+  await OrdersModel.deleteOne({ name, mode: "BUY" });
   res.send("Sell completed");
 });
 
@@ -229,3 +229,4 @@ app.listen(PORT, () => {
   mongoose.connect(uri);
   console.log("DB connected");
 });
+
